@@ -6,7 +6,14 @@ import { connect } from 'react-redux'
 import { inc, dec, stepChanged } from './counterActions'
 
 const Counter = props => (
-    <div>OK</div>
+    <div>
+        <h1>
+            {props.counter.number}
+        </h1>
+        <input onChange={props.stepChanged} value={props.counter.step} type='number'/>
+        <button onClick={props.dec}>Dec</button>
+        <button onClick={props.inc}>Inc</button>
+    </div>
 )
 
 const mapStateToProps = state => ({ counter: state.counter })
